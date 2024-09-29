@@ -96,4 +96,4 @@ $ chainmapper -h
 |PyYAML|MIT|
 
 ## Author
-人海戦術Bチーム / Jinkai-2024-B
+人海戦術_Backdoor / Jinkai-Backdoor
