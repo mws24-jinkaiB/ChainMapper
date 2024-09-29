@@ -1,12 +1,5 @@
 # ChainMapper
-```
-   ___ _           _                                          
-  / __\ |__   __ _(_)_ __   /\/\   __ _ _ __  _ __   ___ _ __ 
- / /  | '_ \ / _` | | '_ \ /    \ / _` | '_ \| '_ \ / _ \ '__|
-/ /___| | | | (_| | | | | / /\/\ \ (_| | |_) | |_) |  __/ |   
-\____/|_| |_|\__,_|_|_| |_\/    \/\__,_| .__/| .__/ \___|_|   
-                                       |_|   |_|    
-```
+![image](https://github.com/user-attachments/assets/1f6cadd6-282d-43f0-b247-0629d69ef632)
 
 ## Overview
 **ChainMapper**は、迅速なWindowsフォレンジックのためのツールである[Chainsaw](https://github.com/WithSecureLabs/chainsaw)の強化モジュールです。  
@@ -58,23 +51,35 @@ $ python src/chainmapper/convert.py {イベントログ.evtx}
 
 
 ## Usage
-詳細な引数, オプションは以下のコマンドでヘルプを確認してください。
+ChainMapperを実行すると、mappings.yamlが生成されます。  
+![image](https://github.com/user-attachments/assets/669f2364-094f-4851-9649-64e0de94fe3a)
 
+mappings.yamlは、イベントログから各フィールドを抽出して生成されています  
+![image](https://github.com/user-attachments/assets/0358d64e-5282-4acf-a0a2-ed2591e19794)
+
+![image](https://github.com/user-attachments/assets/ec4e8f28-d745-4038-8244-8078c4d40d80)
+
+mappings.yamlをChainsawにインポートし、Mappingを下に作成した検知ルールを書くことで  
+該当するイベントをフィルタすることができます。  
+![image](https://github.com/user-attachments/assets/bcdb21f4-60bb-47d9-b6b7-1306479d51f2)
+
+![image](https://github.com/user-attachments/assets/ebbbfd33-1eb5-49e0-84d4-1e471db32264)
+
+
+### 引数, オプション
+```
+evtx_file:
+    input evtx file
+
+-h, --help:
+    show this help message and exit
+```
+
+その他の詳細は `-h` でヘルプを確認してください。
 ```
 $ chainmapper -h
 ```
 
-### 引数
-```
-evtx_file:
-    input evtx file
-```
-
-### オプション
-```
--h, --help:
-    show this help message and exit
-```
 
 ## Future Plans
 - 他のログ分析製品に対するMappingの自動生成
